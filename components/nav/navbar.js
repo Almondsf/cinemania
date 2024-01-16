@@ -33,8 +33,8 @@ const Navbar = (props) => {
             <Image
               src="/static/netflix.svg"
               alt="Netflix logo"
-              width="111"
-              height="30"
+              width="128"
+              height="34"
             />
           </div>
         </a>

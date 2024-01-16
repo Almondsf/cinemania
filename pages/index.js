@@ -4,10 +4,14 @@ import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
 import Banner from "../components/banner";
 import Navbar from "../components/nav/navbar";
+import Card from "../components/card/card";
+import SectionCards from "../components/card/section-cards";
+import { getVideos } from "../lib/videos";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const disneyVideos = getVideos()
   return (
     <div className={styles.container}>
       <Head>
@@ -23,6 +27,11 @@ export default function Home() {
         subTitle="a very cute dog"
         imgUrl="/static/clifford.webp"
       />
+      <div className={styles.sectionWrapper}>
+        <SectionCards title="Disney" size="large" videos={disneyVideos} />
+        <SectionCards title="Disney" size="medium" videos={disneyVideos} />
+        <SectionCards title="Disney" size="small" videos={disneyVideos} />
+      </div>
     </div>
   );
 }
